@@ -38,6 +38,8 @@ void printBST(Node* root)
         if (curr->left != NULL) q.push(curr->left);
         if (curr->right != NULL) q.push(curr->right);
     }
+
+    printf("\n");
 }
 
 
@@ -58,6 +60,34 @@ Node* insert_RecursiveSoln(Node* root, int x)
 
     if (x > root->data)
         root->right = insert_RecursiveSoln(root->right,x);
+
+    return root;
+}
+
+Node* insert_iterativeSoln(Node* root , int x)
+{
+    Node* temp = new Node(x);
+    Node* parent = NULL, *curr = root;
+    while(curr != nullptr)
+    {
+        parent = curr;
+        if (x < curr->data)
+            curr = curr->left;
+        else if (x > curr->data)
+        {
+            curr = curr->right;
+        }
+        else if (x == curr->data)
+            return root;
+    }
+    if (parent == nullptr)
+        return temp;
+    else if (parent->data < x)
+        parent->right = temp;
+    else if (parent->data > x)
+        parent->left = temp;
+
+    return root;
 }
 
 int main()
@@ -68,7 +98,8 @@ int main()
     root->right = new Node(20);
     root->right->left = new Node(18);
     root->right->right = new Node(80);
-    root->right->left = new Node(16);
+    root->right->left->left = new Node(16);
     printBST(root);
     printBST(insert_RecursiveSoln(root, 6));
+    printBST(insert_iterativeSoln(root, 90));
 }
