@@ -66,8 +66,8 @@ Node* insert(Node* root, int x)
     return root;
 }
 
-// O(H)
-// O(1)
+// O(H) - Time complexity
+// O(1) - Extra Space
 Node* floor (Node* root, int x)
 {
     Node* res = nullptr; 

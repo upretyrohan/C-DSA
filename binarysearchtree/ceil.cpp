@@ -99,11 +99,11 @@ int main()
     root = insert(root, 12);
     root = insert(root, 30);
     printBST(root);
-    //root = ceil(root, 14);
+    root = ceil(root, 14);
     //printf("%d", root->data);
     //root = ceil(root, 5);
     //printf("%d", root->data);
-    root = ceil(root, 40);
+    //root = ceil(root, 40);
     if (root)
         printf("%d", root->data);
     else 
