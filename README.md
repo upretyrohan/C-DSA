@@ -1,1 +1,1 @@
-# it contains dsa programs from geeksforgeeks
+it contains data structures and algorithm programs from geeksforgeeks
